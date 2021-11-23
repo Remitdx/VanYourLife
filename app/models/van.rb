@@ -1,5 +1,5 @@
 class Van < ApplicationRecord
-belongs_to :users
+belongs_to :user
 has_many :bookings
 has_many :users, through: :bookings
 validates :nb_places, presence: true
