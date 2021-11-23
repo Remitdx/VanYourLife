@@ -12,7 +12,13 @@ class VansController < ApplicationController
     @van = Van.create(params_van)
     redirect_to van_path(@van)
   end
+  def destroy
+    @van = Van.find(params[:id])
+    @van.destroy
+    redirect_to vans_path	
+  end
   private
   def params_van
     params.require(:van).permit(:nb_seats, :brand, :description, :localisation)
+  end
 end
