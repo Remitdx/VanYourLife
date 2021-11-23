@@ -1,7 +1,14 @@
 <h1>Les vans</h1>
 
-<% @vans.each do |van| %>
-  <%= van.brand %>, <%= van.nb_seats %>, <%= van.description %>, <%= van.localisation %>, <%= van.van_url %>
-<% end  %>
-<%= link_to  "add a new van", new_van_path %>
-
+<div class="container py-5">
+  <div class="row">
+    <% @vans.each do |van| %>
+      <div class="col-12 col-lg-4">
+        <div class="card-category mb-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= van.van_url %>)">
+          <%= link_to van.description, van_path(van) %>
+          <%= link_to "+", van_path(van), method: :delete, data: {confirm: "Are you sure"}, class: "card-remove-link" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
