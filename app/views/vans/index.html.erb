@@ -3,3 +3,5 @@
 <% @vans.each do |van| %>
   <%= van.brand %>, <%= van.nb_seats %>, <%= van.description %>, <%= van.localisation %>, <%= van.van_url %>
 <% end  %>
+<%= link_to  "add a new van", new_van_path %>
+
