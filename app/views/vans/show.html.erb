@@ -1,5 +1,25 @@
-<h2><%= @van.nb_seats %></h2>
-<p><%= @van.brand %></p>
-<p><%= @van.description %></p>
-<p><%= @van.localisation %></p>
+
+<div>
+<br>
+<h1><%= @van.description %></h1>
+</div>
+<div class="container py-3 mb-4">
+  <div class="card-trip mb-4">
+    <img src= <%= @van.van_url %> />
+      <div class="card-trip-infos py-5 mb-4">
+        <div>
+          <br>
+          <h2>Location: <%= @van.localisation %></h2>
+          <br>
+          <p>It's a really nice <%= @van.brand %> van to go on holidays with your friends.
+          <br>Please contact me to have more informations about it</p>
+          <br>
+        </div>
+          <p>number of seats: <%= @van.nb_seats %></p>
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+      </div>
+  </div>
+</div>
+<br>
+<br>
 <%= link_to 'delete', van_path(@van), method: :delete, data: {confirm: "Are you sure"} %>
