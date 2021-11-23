@@ -2,4 +2,4 @@
 <p><%= @van.brand %></p>
 <p><%= @van.description %></p>
 <p><%= @van.localisation %></p>
-<%= link_to 'delete', vans_path %>
+<%= link_to 'delete', van_path(@van), method: :delete, data: {confirm: "Are you sure"} %>
