@@ -1,1 +1,5 @@
 <h1>Les vans</h1>
+
+<% @vans.each do |van| %>
+  <%= van.brand %>, <%= van.nb_seats %>, <%= van.description %>, <%= van.localisation %>, <%= van.van_url %>
+<% end  %>
