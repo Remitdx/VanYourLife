@@ -2,6 +2,9 @@ class VansController < ApplicationController
   def index
     @vans = Van.all
   end
+  def show
+    @van = Van.find(params[:id])
+  end
   def new
     @van = Van.new
   end
@@ -12,5 +15,4 @@ class VansController < ApplicationController
   private
   def params_van
     params.require(:van).permit(:nb_seats, :brand, :description, :localisation)
-  end
 end
