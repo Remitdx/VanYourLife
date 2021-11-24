@@ -47,7 +47,7 @@ class VansController < ApplicationController
   def destroy
     @van = Van.find(params[:id])
     @van.destroy
-    redirect_to vans_path
+    # redirect_to vans_path
   end
 
   private
