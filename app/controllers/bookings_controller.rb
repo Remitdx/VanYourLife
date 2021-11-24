@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   def new
     @booking = Booking.new
+    @booking.user = current_user
     @van = Van.find(params[:van_id])
   end
 
