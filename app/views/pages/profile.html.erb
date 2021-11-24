@@ -1,1 +1,19 @@
 <h1>profile page</h1>
+<%= current_user %>
+<%= current_user.email %>
+<h2>vans i want to rent</h2>
+<% current_user.bookings.each do |booking|%>
+  <% van = Van.find(booking.van_id) %>
+  <p> <%= van.brand %> </p>
+<% end  %>  
+<h2>my vans that people wants to rent</h2>
+<% current_user.vans.each do |van| %>
+  <% @bookings = Booking.where(van: van) %>
+  <br>
+  <% @bookings.each do |booking| %>
+    <%= Van.find(booking.van_id).brand %>
+    <%=link_to 'ACCEPTED', accepted_booking_path(booking), method: :patch  %>
+    <%=link_to 'DECLINED', declined_booking_path(booking), method: :patch  %>
+  <% end %>
+  
+<% end %>
