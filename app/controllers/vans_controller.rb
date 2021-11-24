@@ -13,10 +13,14 @@ class VansController < ApplicationController
   end
 
   def create
-    @van = Van.new(params_van)
-    @van.user = current_user
-    @van.save
-    redirect_to van_path(@van)
+    if current_user
+      @van = Van.new(params_van)
+      @van.user = current_user
+      @van.save
+      redirect_to van_path(@van)
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def edit
