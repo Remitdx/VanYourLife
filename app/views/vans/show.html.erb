@@ -15,7 +15,10 @@
           <br>Please contact me to have more informations about it</p>
           <div class="d-flex mt-4">
             <%= link_to "Book this one", new_van_booking_path(@van), class:"btn btn-success mr-2"%>
-            <%= link_to "Back to list", vans_path, class:"btn btn-secondary ml-2"%>
+            <%= link_to "Back to list", vans_path, class:"btn btn-secondary ml-2 mr-2"%>
+            <% if @van.user == current_user %>
+              <%= link_to "Delete", vans_path, method: :delete, data: {confirm: "Are you sure"}, class:"btn btn-danger ml-2 "%>
+            <%end%>
           </div>
         </div>
           <p>number of seats: <%= @van.nb_seats %></p>
