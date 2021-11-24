@@ -11,10 +11,22 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.status = "Pending"
     if @booking.save!
-      redirect_to van_path(@van)
+      redirect_to profile_path
     else
       render :new
     end
+  end
+  
+  def accepted
+    @booking = Booking.find(params[:id])
+    @booking.status = "Accepted"
+    @booking.save
+  end
+
+  def declined
+    @booking = Booking.find(params[:id])
+    @booking.status = "Declined"
+    @booking.save
   end
 
    private
