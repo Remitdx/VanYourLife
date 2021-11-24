@@ -6,7 +6,9 @@
       <div class="col-12 col-lg-4">
         <div class="card-category mb-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= van.van_url %>)">
           <%= link_to van.description, van_path(van) %>
-          <%= link_to "+", van_path(van), method: :delete, data: {confirm: "Are you sure"}, class: "card-remove-link" %>
+          <% if van.user == current_user %>
+            <%= link_to "+", van_path(van), method: :delete, data: {confirm: "Are you sure"}, class: "card-remove-link" %>
+          <%end%>
         </div>
       </div>
     <% end %>
