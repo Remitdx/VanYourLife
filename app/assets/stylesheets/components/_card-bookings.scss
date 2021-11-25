@@ -1,0 +1,26 @@
+.card-bookings {
+  overflow: hidden;
+  height: 350px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  padding: 16px 32px;
+  margin: 16px 32px;
+  justify-content: space-around;
+}
+
+.card-bookings img {
+  width: 250px;
+  border-radius: 4px;
+
+}
+
+.card-text {
+  text-align: left;
+}
+
+h5 {
+  font-size: 24px;
+  text-align: left;
+}
