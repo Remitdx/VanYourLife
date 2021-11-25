@@ -5,7 +5,7 @@
 </div>
 <div class="container py-3 mb-4">
   <div class="card-trip mb-4">
-    <img src= <%= @van.van_url %> />
+   <%= cl_image_tag @van.photo.key, height: 300, width: 400, crop: :fill %>
       <div class="card-trip-infos py-5 mb-4">
         <div>
           <br>
@@ -26,7 +26,7 @@
           </div>
         </div>
           <p>number of seats: <%= @van.nb_seats %></p>
-          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
       </div>
   </div>
 </div>
