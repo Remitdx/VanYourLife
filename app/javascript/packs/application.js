@@ -8,6 +8,7 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
@@ -26,10 +27,13 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 import { loadDynamicBannerText } from '../components/banner';
 // import { initSelect2 } from '../components/init_select2';
+import { initFlatpickr } from "../plugins/flatpickr";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  initFlatpickr();
+
   loadDynamicBannerText();
   initMapbox();
 });

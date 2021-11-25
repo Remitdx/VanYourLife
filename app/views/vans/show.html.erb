@@ -5,7 +5,7 @@
 </div>
 <div class="container py-3 mb-4">
   <div class="card-trip mb-4">
-    <img src= <%= @van.van_url %> />
+   <%= cl_image_tag @van.photo.key, height: 300, width: 400, crop: :fill %>
       <div class="card-trip-infos py-5 mb-4">
         <div>
           <br>
@@ -14,16 +14,17 @@
           <p>It's a really nice <%= @van.brand %> van to go on holidays with your friends.
           <br>Please contact me to have more informations about it</p>
           <div class="d-flex mt-4">
-            <%= link_to "Book this one", new_van_booking_path(@van), class:"btn btn-success mr-2"%>
             <%= link_to "Back to list", vans_path, class:"btn btn-secondary ml-2 mr-2"%>
             <% if @van.user == current_user %>
               <%= link_to "Update", edit_van_path(@van), class:"btn btn-warning ml-2 mr-2"%>
               <%= link_to "Delete", van_path(@van), method: :delete, data: {confirm: "Are you sure"}, class:"btn btn-danger ml-2 "%>
+              <% else %>
+            <%= link_to "Book this one", new_van_booking_path(@van), class:"btn btn-success mr-2"%>
             <%end%>
           </div>
         </div>
           <p>number of seats: <%= @van.nb_seats %></p>
-          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
       </div>
   </div>
 </div>

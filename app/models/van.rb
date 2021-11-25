@@ -6,7 +6,8 @@ class Van < ApplicationRecord
   validates :brand, presence: true
   validates :description, presence: true
   validates :localisation, presence: true
-
   geocoded_by :localisation
   after_validation :geocode, if: :will_save_change_to_localisation?
+  validates :photo, presence: true
+  has_one_attached :photo
 end
