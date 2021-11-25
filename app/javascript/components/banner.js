@@ -5,8 +5,8 @@ const loadDynamicBannerText = () => {
   const banner = document.querySelector('.banner');
   if (banner) {
     new Typed('#banner-typed-text', {
-      strings: ["A new way", "to escape !"],
-      typeSpeed: 50,
+      strings: ["Everyone deserve freedom", "A new way to escape !"],
+      typeSpeed: 30,
       loop: true
     });
   }
