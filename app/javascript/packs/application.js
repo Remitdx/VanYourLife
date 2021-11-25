@@ -23,6 +23,8 @@ ActiveStorage.start()
 import "bootstrap";
 
 // Internal imports, e.g:
+import { initMapbox } from '../plugins/init_mapbox';
+
 import { loadDynamicBannerText } from '../components/banner';
 // import { initSelect2 } from '../components/init_select2';
 import { initFlatpickr } from "../plugins/flatpickr";
@@ -33,4 +35,5 @@ document.addEventListener('turbolinks:load', () => {
   initFlatpickr();
 
   loadDynamicBannerText();
+  initMapbox();
 });
