@@ -46,7 +46,7 @@
       <% current_user.vans.each do |van| %>
       <% @bookings = Booking.where(van: van) %>
         <% @bookings.each do |booking| %>
-        <%= Van.find(booking.van_id).description %>
+        <% Van.find(booking.van_id).description %>
           <div class="card mb-4" style="width: 25rem">
             <img src= <%= van.van_url %> class="card-img" alt="...">
             <br>
