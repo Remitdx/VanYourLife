@@ -16,6 +16,7 @@ class VansController < ApplicationController
     if current_user
       @van = Van.new(params_van)
       @van.user = current_user
+      
       if @van.save
         redirect_to van_path(@van)
       else
@@ -53,6 +54,6 @@ class VansController < ApplicationController
   private
 
   def params_van
-    params.require(:van).permit(:nb_seats, :brand, :description, :localisation, :van_url)
+    params.require(:van).permit(:nb_seats, :brand, :description, :localisation, :photo)
   end
 end

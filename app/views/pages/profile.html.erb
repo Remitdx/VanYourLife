@@ -28,7 +28,8 @@
       <% van = Van.find(booking.van_id) %>
       <br>
       <div class="card mb-4" style="width: 25rem;">
-        <img src= <%= van.van_url %> class="card-img-top" alt="...">
+        <%= cl_image_tag van.photo.key, height: 300, width: 400, crop: :fill, class: "card-img-top", alt: "..." %>
+      
         <div class="card-body">
           <h5 class="card-title"><p>💡<%= van.description %></p></h5>
           <p class="card-text">
@@ -48,7 +49,7 @@
         <% @bookings.each do |booking| %>
         <% Van.find(booking.van_id).description %>
           <div class="card mb-4" style="width: 25rem">
-            <img src= <%= van.van_url %> class="card-img" alt="...">
+          <%= cl_image_tag van.photo.key, height: 300, width: 400, crop: :fill, class: "card-img", alt: "..." %>
             <br>
               <div class="card-body">
               <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm"/>
