@@ -10,8 +10,8 @@ require "open-uri"
 
 
 puts 'Cleaning database...'
-Van.destroy_all if Rails.env.development?
-User.destroy_all if Rails.env.development?
+Van.destroy_all # if Rails.env.development?
+User.destroy_all # if Rails.env.development?
 
 puts "Creating random users !"
 
