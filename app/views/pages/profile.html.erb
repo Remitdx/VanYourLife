@@ -20,23 +20,28 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container" id="bookings">
   <div class="row">
     <div class="col-12 col-lg-6">
       <h2>My vans that I want to rent</h2>
       <% current_user.bookings.each do |booking|%>
-      <% van = Van.find(booking.van_id) %>
-      <br>
-      <div class="card mb-4" style="width: 25rem;">
-        <img src= <%= van.van_url %> class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"><p>💡<%= van.description %></p></h5>
-          <p class="card-text">
-          Brand: <%= van.brand %><br>
-          Seats: <%=van.nb_seats %><br>
-          Location: <%=van.localisation %></p>
+        <% van = Van.find(booking.van_id) %>
+        <br>
+        <div class="card mb-4" style="width: 25rem; height: 545px;">
+          <br>
+          <img src= <%= van.van_url %> class="card-img-top" alt="...">
+          <div class="card-body">
+            <div class="card-title">
+              <p>💡 <%= van.description %></p>
+            </div>
+            <div class="card-text text-center">
+              <p>Brand: <%= van.brand %></p>
+              <p>Seats: <%=van.nb_seats %></p>
+              <p>Location: <%=van.localisation %></p>
+              <p>Status: <%=booking.status %></p>
+            </div>
+          </div>
         </div>
-      </div>
       <% end  %>
     </div>
 
@@ -44,26 +49,35 @@
       <h2>My vans that people wants to rent</h2>
       <br>
       <% current_user.vans.each do |van| %>
-      <% @bookings = Booking.where(van: van) %>
+        <% @bookings = Booking.where(van: van) %>
         <% @bookings.each do |booking| %>
-        <% Van.find(booking.van_id).description %>
-          <div class="card mb-4" style="width: 25rem">
+
+          <% Van.find(booking.van_id).description %>
+          <div class="card mb-4" id="booking-<%= booking.id %>"style="width: 25rem; height: 545px;">
+            <br>
+
             <img src= <%= van.van_url %> class="card-img" alt="...">
             <br>
-              <div class="card-body">
+            <div class="card-body">
               <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm"/>
               <br>
               <br>
               <p>👋 "Hi, please, I'd like to rent your van"</p>
-              </div>
-                <%=link_to 'ACCEPTED', accepted_booking_path(booking), method: :patch, class:"btn btn-success" %>
-                <%=link_to 'DECLINED', declined_booking_path(booking), method: :patch, class:"btn btn-warning" %>
-                <br>
-                <br>
+            </div>
+            <% if booking.status == "Accepted"  %>
+              <%=link_to 'ACCEPTED', accepted_booking_path(booking), method: :patch, class:"btn btn-success" %>
+            <% elsif booking.status == "Declined"  %>
+              <%=link_to 'DECLINED', declined_booking_path(booking), method: :patch, class:"btn btn-warning" %>
+            <% else  %>
+              <%=link_to 'ACCEPTED', accepted_booking_path(booking), method: :patch, class:"btn btn-success" %>
+              <%=link_to 'DECLINED', declined_booking_path(booking), method: :patch, class:"btn btn-warning" %>
+            <% end  %>
+            <br>
+            <br>
           </div>
-      <% end %>
         <% end %>
-          <br>
+      <% end %>
+      <br>
     </div>
   </div>
 </div>
