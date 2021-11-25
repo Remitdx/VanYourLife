@@ -14,11 +14,12 @@
           <p>It's a really nice <%= @van.brand %> van to go on holidays with your friends.
           <br>Please contact me to have more informations about it</p>
           <div class="d-flex mt-4">
-            <%= link_to "Book this one", new_van_booking_path(@van), class:"btn btn-success mr-2"%>
             <%= link_to "Back to list", vans_path, class:"btn btn-secondary ml-2 mr-2"%>
             <% if @van.user == current_user %>
               <%= link_to "Update", edit_van_path(@van), class:"btn btn-warning ml-2 mr-2"%>
               <%= link_to "Delete", van_path(@van), method: :delete, data: {confirm: "Are you sure"}, class:"btn btn-danger ml-2 "%>
+              <% else %>
+            <%= link_to "Book this one", new_van_booking_path(@van), class:"btn btn-success mr-2"%>
             <%end%>
           </div>
         </div>
