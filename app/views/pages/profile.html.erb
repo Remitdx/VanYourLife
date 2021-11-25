@@ -65,9 +65,9 @@
               <p>👋 "Hi, please, I'd like to rent your van"</p>
             </div>
             <% if booking.status == "Accepted"  %>
-              <%=link_to 'ACCEPTED', accepted_booking_path(booking), method: :patch, class:"btn btn-success" %>
+              <p class="btn btn-success">ACCEPTED</p>
             <% elsif booking.status == "Declined"  %>
-              <%=link_to 'DECLINED', declined_booking_path(booking), method: :patch, class:"btn btn-warning" %>
+              <p class="btn btn-warning">DECLINED</p>
             <% else  %>
               <%=link_to 'ACCEPTED', accepted_booking_path(booking), method: :patch, class:"btn btn-success" %>
               <%=link_to 'DECLINED', declined_booking_path(booking), method: :patch, class:"btn btn-warning" %>
