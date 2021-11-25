@@ -20,9 +20,9 @@ ActiveStorage.start()
 
 // External imports
 import "bootstrap";
-import { loadDynamicBannerText } from '../components/banner';
 
 // Internal imports, e.g:
+import { loadDynamicBannerText } from '../components/banner';
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
