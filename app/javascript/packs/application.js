@@ -20,11 +20,11 @@ ActiveStorage.start()
 
 // External imports
 import "bootstrap";
-import { loadDynamicBannerText } from '../components/banner';
 
 // Internal imports, e.g:
 import { initMapbox } from '../plugins/init_mapbox';
 
+import { loadDynamicBannerText } from '../components/banner';
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
