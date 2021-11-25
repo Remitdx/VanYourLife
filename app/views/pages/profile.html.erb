@@ -23,7 +23,7 @@
 <div class="container" id="bookings">
   <div class="row">
     <div class="col-12 col-lg-6">
-      <h2>My vans that I want to rent</h2>
+      <h2>My booking demands</h2>
       <% current_user.bookings.each do |booking|%>
 
         <% van = Van.find(booking.van_id) %>
@@ -47,7 +47,7 @@
     </div>
 
     <div class="col-12 col-lg-6">
-      <h2>My vans that people wants to rent</h2>
+      <h2>They want to book your van</h2>
       <br>
       <% current_user.vans.each do |van| %>
         <% @bookings = Booking.where(van: van) %>
