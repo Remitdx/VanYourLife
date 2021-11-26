@@ -1,12 +1,15 @@
 .footer{
     text-align: center;
     background-color: $beige;
-    height: 300px;
-    padding: 70px 50px 50px 50px;
+    height: 150px;
+    padding: 20px;
+    font-family: 'Open Sans', sans-serif;
 }
 .icons-container{
-  padding-top: 30px ;
+  padding-top: 0px ;
 }
 .footer-icon{
     color: $light-green;
+    padding-left: 10px;
+    padding-right: 10px;
 }

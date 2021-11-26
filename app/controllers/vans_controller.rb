@@ -7,7 +7,7 @@ class VansController < ApplicationController
         lat: van.latitude,
         lng: van.longitude,
         info_window: render_to_string(partial: "info_window", locals: { van: van }),
-        image_url: helpers.asset_url('3481190.png')
+        image_url: helpers.asset_url('van-logo.png')
       }
     end
   end
