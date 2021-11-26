@@ -58,5 +58,5 @@ puts "Creating Bookings !"
 
 booking1 = Booking.create!(user: user3, van: van1, start_date: "2022-07-15", end_date: "2022-07-28", status: "Pending")
 booking2 = Booking.create!(user: user2, van: van5, start_date: "2022-03-06", end_date: "2022-04-17", status: "Pending")
-
+booking3 = Booking.create!(user: user1, van: van4, start_date: "2022-03-06", end_date: "2022-04-17", status: "Pending")
 puts "Finished!"
