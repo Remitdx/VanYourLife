@@ -1,20 +1,18 @@
 <br>
 <h1>Welcome on board !</h1>
-<h2>Manage all your rentals from here.</h2>
-<div>
-<%= current_user.email %>
-</div>
+<h2>Manage all your rentals from here</h2>
+
 <div class="container py-5 mb-5">
   <div class="card-product">
-    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+    <%= image_tag "avatar.png", class: "avatar-bordered" %>
     <div class="card-product-infos">
-      <h2><i class="fas fa-medal"></i>Super Van</h2>
+      <h2><i class="fas fa-medal"></i>Super Van Host</h2>
       <h2> ⭐ 1200 commentaires </h2>
       <br>
-      <h2>Mathieu</h2>
+      <h2>Yasmine</h2>
       <br>
-      <h2>30 ans, habite à Lille</h2>
-      <p>Passioné de voyage, j'adore utiliser mon van pour partir en vadrouille.<br>
+      <h2>25 ans, habite à Lille</h2>
+      <p>Passionée de voyage, j'adore utiliser mon van pour partir en vadrouille.<br>
       Très pratique, il est full <strong>équipé</strong>, que ce soit pour cuisiner, dormir ou juste s'installer dedans et vaquer à mes occupations</p>
     </div>
   </div>
@@ -55,13 +53,12 @@
           <% Van.find(booking.van_id).description %>
           <div class="card mb-4" id="booking-<%= booking.id %>"style="width: 25rem; height: 545px;">
             <br>
-             <%= cl_image_tag van.photo.key, height: 300, width: 400, crop: :fill, class: "card-img", alt: "..." %>
+             <%= cl_image_tag van.photo.key, height: 280, width: 400, crop: :fill, class: "card-img", alt: "..." %>
             <br>
             <div class="card-body">
               <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm"/>
-              <br>
-              <br>
               <p>👋 "Hi, please, I'd like to rent your van"</p>
+              <p>from <%=booking.start_date %> to <%=booking.end_date %></p></p>
             </div>
             <% if booking.status == "Accepted"  %>
               <p class="btn btn-success">ACCEPTED</p>
