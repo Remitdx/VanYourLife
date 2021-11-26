@@ -24,7 +24,7 @@ class VansController < ApplicationController
     if current_user
       @van = Van.new(params_van)
       @van.user = current_user
-      
+
       if @van.save
         redirect_to van_path(@van)
       else
@@ -56,7 +56,7 @@ class VansController < ApplicationController
   def destroy
     @van = Van.find(params[:id])
     @van.destroy
-    # redirect_to vans_path
+    redirect_to vans_path
   end
 
   private
