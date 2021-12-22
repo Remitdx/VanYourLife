@@ -20,6 +20,8 @@ puts "Creating random users !"
 user1 = User.create!(email: "florimond@gmail.com", password: "azerty", first_name: "Florimond", last_name: "Billiau", driving_license: "false", address: "rue Royale")
 user2 = User.create!(email: "florimonde@gmail.com", password: "azerty", first_name: "Florimonde", last_name: "Billiot", driving_license: "false", address: "rue de la soif")
 user3 = User.create!(email: "fx@gmail.com", password: "azerty", first_name: "FX", last_name: "Wagon", driving_license: false, address: "Champs Elysees")
+user4 = User.create!(email: "remi@gmail.com", password: "azerty", first_name: "Rémi", last_name: "Tondeux", driving_license: "true", address: "Anywhere")
+
 
 puts "Creating awesome vans !"
 
